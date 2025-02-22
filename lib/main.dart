@@ -1,4 +1,6 @@
 import 'package:color_extraction/db_color/db_color.dart';
+import 'package:color_extraction/pages/color_find/color_find_binding.dart';
+import 'package:color_extraction/pages/color_find/color_find_view.dart';
 import 'package:color_extraction/pages/color_first/color_first_binding.dart';
 import 'package:color_extraction/pages/color_first/color_first_view.dart';
 import 'package:color_extraction/pages/color_second/color_second_binding.dart';
@@ -11,6 +13,8 @@ import 'package:color_extraction/pages/no_network/no_network_binding.dart';
 import 'package:color_extraction/pages/no_network/no_network_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import 'db_color/color_input.dart';
 
 Color primaryColor = Colors.black;
 Color bgColor = const Color(0xfff8f8f8);
@@ -44,7 +48,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: Pickers,
-      initialRoute: '/color_tab',
+      initialRoute: '/',
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -97,9 +101,11 @@ class MyApp extends StatelessWidget {
 }
 
 List<GetPage<dynamic>> Pickers = [
+  GetPage(name: '/', page: () => const ColorFindView(), binding: ColorFindBinding()),
   GetPage(name: '/color_first', page: () => ColorFirstPage(), binding: ColorFirstBinding()),
   GetPage(name: '/color_second', page: () => const ColorSecondPage(), binding: ColorSecondBinding()),
   GetPage(name: '/color_third', page: () => ColorThirdPage(), binding: ColorThirdBinding()),
   GetPage(name: '/color_tab', page: () => ColorTabPage(), binding: ColorTabBinding()),
+  GetPage(name: '/color_input', page: () => const ColorInput()),
   GetPage(name: '/check', page: () => NoNetworkPage(), binding: NoNetworkBinding())
 ];

@@ -11,8 +11,8 @@ class ColorFindView extends GetView<PageLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.hermann.value
-              ? const CircularProgressIndicator(color: Colors.greenAccent)
+          () => controller.daugherty.value
+              ? const CircularProgressIndicator(color: Colors.black)
               : buildError(),
         ),
       ),
@@ -26,7 +26,7 @@ class ColorFindView extends GetView<PageLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.ndvtkqgl();
+              controller.gnvsb();
             },
             icon: const Icon(
               Icons.restart_alt,
